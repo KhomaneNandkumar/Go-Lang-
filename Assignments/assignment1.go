@@ -1,3 +1,4 @@
+// Profit calculator
 // It should take taxRate, Revenue, Expenses from user.
 // EBT = R - E
 // P = EBT * (1-taxRate/100)
