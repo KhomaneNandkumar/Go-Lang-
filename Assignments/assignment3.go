@@ -58,10 +58,7 @@ func main() {
 
 		fmt.Println("Enter Second Number")
 		fmt.Scan(&number2)
-
-		if choice == 6 {
-			break
-		}
+		
 		switch choice {
 		case 1:
 			fmt.Println("Addition Of ", number1, "and", number2, "is :", addition(number1, number2))
