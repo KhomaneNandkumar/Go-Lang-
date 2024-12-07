@@ -5,14 +5,6 @@ import (
 	"time"
 )
 
-type Student struct{
-	username  string
-	age  string
-	gender  string
-	id int
-	joinedAt time.Time
-}
-
 func getData(prompt string) string {
 	fmt.Println(prompt)
 	var input string
@@ -21,24 +13,33 @@ func getData(prompt string) string {
 	return input
 }
 
-func outputData(name, age, gender string) {
-	fmt.Println("Name is", name)
-	fmt.Println("Agfe Is", age)
-	fmt.Println("Genser is", gender)
+type User struct {
+	username   string
+	age        string
+	gender     string
+	lastActive time.Time
 }
+
 func main() {
+	var dummyUser User
+
 	name := getData("Enter Name:")
-	age := getData("Enter Age:")
+	age := getData("Enter Date Of Birth:")
 	gender := getData("Enter Gender:")
 
-	var studentA Student{
-		username : name ,
-		age : age, 
-		gender : gender,
-		id :1,
-		joinedAt time
+	dummyUser = User{
+		username:   name,
+		age:        age,
+		gender:     gender,
+		lastActive: time.Now(),
 	}
+	displayDataAdv(dummyUser)
+}
 
-	outputData(name, age, gender)
+func displayDataAdv(userData User) {
+	fmt.Println("Name Is :", userData.username)
+	fmt.Println("Age Is :", userData.age)
+	fmt.Println("Gender IS :", userData.gender)
+	fmt.Println("Last Active At :", userData.lastActive)
 
 }
